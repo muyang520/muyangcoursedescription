@@ -34,16 +34,14 @@
 
 1. 每集大概20-30分钟.思维导图代表课程目录。学习时长自己判断哦
 
-
-
 ![image-20230602113652385](README.assets/《移动安全之安卓逆向》.png)
+
+
 
 ## 2.移动安全之iOS逆向
 
 
 1. 每集大概20-30分钟.思维导图代表课程目录。学习时长自己判断哦
-
-
 
 ### 课程目录
 
@@ -163,6 +161,27 @@ iOS更新
 
 > 1.使用chomper模拟执行iOS
 > 2.分析chomper Trace日志。魔改SHA1算法还原
+
+### 2025.6月份更新记录
+
+安卓和iOS逆向更新相同
+
+安卓在第八章   iOS在第五章  同时之前的1-10节课已经替换成下面的新版本了。
+
+```
+1(IDApro与arm汇编)IDAPro的基础使用介绍
+2(IDApro与arm汇编)arm汇编基础与调试环境搭建
+3(IDApro与arm汇编)操作系统基本原理
+4(IDApro与arm汇编)arm架构及A64与A32的区别
+5(IDApro与arm汇编)数据处理指令
+6(IDApro与arm汇编)内存访问_堆栈_调用约定
+7(IDApro与arm汇编)条件执行
+8(IDApro与arm汇编)控制流
+9(IDApro与arm汇编)静态分析_汇编算法还原_patchSo
+10(IDApro与arm汇编)arm实现inlinehook
+```
+
+
 
 ## 4.学员评价
 
