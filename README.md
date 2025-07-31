@@ -181,6 +181,19 @@ iOS更新
 10(IDApro与arm汇编)arm实现inlinehook
 ```
 
+### 2025.7月份更新记录
+
+iOS更新
+
+```
+3.11(越狱插件Theos)使用Xcode调试Tewak插件以及附加所有app
+8.4.1(AI开发逆向助手)开发思路和Theos插件开发
+8.4.2(AI开发逆向助手)hook到的数据进行保存
+8.4.3(AI开发逆向助手)巨魔app开发和助手ipa的开发思路
+8.5.1(swift逆向)swift逆向介绍以及SwiftString的frida_hook参数和返回值替换
+8.5.2(swift逆向)swift案例之某加密器算法还原
+```
+
 
 
 ## 4.学员评价
