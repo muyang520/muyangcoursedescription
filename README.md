@@ -81,8 +81,20 @@
 
 课程保持每月更新，紧跟行业技术动态。完整记录见 [CHANGELOG.md](CHANGELOG.md)。
 
-最近更新（2026年1月）：
+最近更新（2026年2月）：
 安卓新增：
+
+- 14.2Ai一键逆向某海外App签名实战
+  - 1.AI自动抓包分析
+  - 2.APK自动解压搜索
+  - 3.AI定位关键代码
+- 14.3 逆向还原GrokAPP的算法并调用接口对话
+  - 1.secp256k1密钥对生成与公钥压缩
+  - 2.gRPC/Protobuf协议逆向与手写编码
+  - 3.challenge-response匿名认证流程分析
+  - 4.ECDSA签名：compact格式+Low-S规范化
+  - 5.Python完整还原与流式gRPC响应解析
+  - 6.MCP辅助逆向：jadxmcp+idapromcp实战
 
 - 13.6.BCC框架入门与BPF_HASH详解
   - 1.BCC框架Python+C混合编程
