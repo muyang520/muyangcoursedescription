@@ -1,5 +1,7 @@
 update.bat
 update.ps1
 update.md
+push.bat
 README_NEW.md
 README_OLD.md
+.claude/
