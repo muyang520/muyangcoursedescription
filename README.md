@@ -1,4 +1,4 @@
-# 沐阳逆向教育 - 安卓/iOS逆向实战课程
+﻿# 沐阳逆向教育 - 安卓/iOS逆向实战课程
 
 > 从零基础到逆向工程师，系统化学习移动安全逆向技术
 
@@ -81,9 +81,58 @@
 
 课程保持每月更新，紧跟行业技术动态。完整记录见 [CHANGELOG.md](CHANGELOG.md)。
 
-最近更新（2025年12月）：
-- 新增 eBPF 系列课程（概念、环境搭建、bpftrace、hook安卓native）
-- 新增 eCapture 无视证书抓包实战
+最近更新（2026年1月）：
+安卓新增：
+
+- 13.6.BCC框架入门与BPF_HASH详解
+  - 1.BCC框架Python+C混合编程
+  - 2.BPF_HASH数据结构使用
+  - 3.内核版本兼容性处理方案
+- 13.7.BCC高级特性与数据传递机制
+  - 1.BPF_PERF_OUTPUT事件输出
+  - 2.Map/Perf/Ring三种数据传递对比
+  - 3.uprobe用户态函数追踪实战
+- 13.8.libbpf入门环境搭建
+  - 1.BCC vs libbpf:编译型vs解释型
+  - 2.libbpf CO-RE跨内核版本优势
+  - 3.bootstrap项目环境搭建
+- 13.9.libbpf核心示例与探针类型详解
+  - 1.libbpf完整代码结构详解
+  - 2.kprobe/uprobe/tp/raw_tp四种探针
+  - 3.用户态与内核态数据交互机制
+- 13.10.Android_eBpf实战开发-ssltrace
+  - 1.BPF Maps核心数据类型
+  - 2.CO-RE BTF跨版本兼容开发
+  - 3.Android eBPF ssltrace抓包开发
+- 14.1.AI工具入门与实战-Android版-教案
+  - 1.AI辅助逆向分析
+  - 2.Java层AI分析
+  - 3.Native层AI分析
+
+- 13.6.BCC框架入门与BPF_HASH详解
+  - 1.BCC框架Python+C混合编程
+  - 2.BPF_HASH数据结构使用
+  - 3.内核版本兼容性处理方案
+- 13.7.BCC高级特性与数据传递机制
+  - 1.BPF_PERF_OUTPUT事件输出
+  - 2.Map/Perf/Ring三种数据传递对比
+  - 3.uprobe用户态函数追踪实战
+- 13.8.libbpf入门环境搭建
+  - 1.BCC vs libbpf:编译型vs解释型
+  - 2.libbpf CO-RE跨内核版本优势
+  - 3.bootstrap项目环境搭建
+- 13.9.libbpf核心示例与探针类型详解
+  - 1.libbpf完整代码结构详解
+  - 2.kprobe/uprobe/tp/raw_tp四种探针
+  - 3.用户态与内核态数据交互机制
+- 13.10.Android_eBpf实战开发-ssltrace
+  - 1.BPF Maps核心数据类型
+  - 2.CO-RE BTF跨版本兼容开发
+  - 3.Android eBPF ssltrace抓包开发
+- 14.1.AI工具入门与实战-Android版-教案
+  - 1.AI辅助逆向分析
+  - 2.Java层AI分析
+  - 3.Native层AI分析
 
 ---
 

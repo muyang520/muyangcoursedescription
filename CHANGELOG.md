@@ -1,29 +1,95 @@
-# 课程更新记录
+﻿# 课程更新记录
 
 课程持续更新中，跟着行业走。
 
 ---
+## 2026年1月
+
+安卓新增：
+
+- 13.6.BCC框架入门与BPF_HASH详解
+  - 1.BCC框架Python+C混合编程
+  - 2.BPF_HASH数据结构使用
+  - 3.内核版本兼容性处理方案
+- 13.7.BCC高级特性与数据传递机制
+  - 1.BPF_PERF_OUTPUT事件输出
+  - 2.Map/Perf/Ring三种数据传递对比
+  - 3.uprobe用户态函数追踪实战
+- 13.8.libbpf入门环境搭建
+  - 1.BCC vs libbpf:编译型vs解释型
+  - 2.libbpf CO-RE跨内核版本优势
+  - 3.bootstrap项目环境搭建
+- 13.9.libbpf核心示例与探针类型详解
+  - 1.libbpf完整代码结构详解
+  - 2.kprobe/uprobe/tp/raw_tp四种探针
+  - 3.用户态与内核态数据交互机制
+- 13.10.Android_eBpf实战开发-ssltrace
+  - 1.BPF Maps核心数据类型
+  - 2.CO-RE BTF跨版本兼容开发
+  - 3.Android eBPF ssltrace抓包开发
+- 14.1.AI工具入门与实战-Android版-教案
+  - 1.AI辅助逆向分析
+  - 2.Java层AI分析
+  - 3.Native层AI分析
+
+---
+
+## 2026年1月
+
+安卓新增：
+
+- 13.6.BCC框架入门与BPF_HASH详解
+  - 1.BCC框架Python+C混合编程
+  - 2.BPF_HASH数据结构使用
+  - 3.内核版本兼容性处理方案
+- 13.7.BCC高级特性与数据传递机制
+  - 1.BPF_PERF_OUTPUT事件输出
+  - 2.Map/Perf/Ring三种数据传递对比
+  - 3.uprobe用户态函数追踪实战
+- 13.8.libbpf入门环境搭建
+  - 1.BCC vs libbpf:编译型vs解释型
+  - 2.libbpf CO-RE跨内核版本优势
+  - 3.bootstrap项目环境搭建
+- 13.9.libbpf核心示例与探针类型详解
+  - 1.libbpf完整代码结构详解
+  - 2.kprobe/uprobe/tp/raw_tp四种探针
+  - 3.用户态与内核态数据交互机制
+- 13.10.Android_eBpf实战开发-ssltrace
+  - 1.BPF Maps核心数据类型
+  - 2.CO-RE BTF跨版本兼容开发
+  - 3.Android eBPF ssltrace抓包开发
+- 14.1.AI工具入门与实战-Android版-教案
+  - 1.AI辅助逆向分析
+  - 2.Java层AI分析
+  - 3.Native层AI分析
+
+---
+
 
 ## 2025年12月
 
 安卓新增：
 
-- 13.1.ebpf概念与Ubuntu开发环境搭建
-  - ebpf概念
-  - BCC在Ubuntu虚拟机的开发环境搭建
-- 13.2.在安卓模拟器和真机上搭建ebpf开发环境以及eCapture抓包初体验
+- 13.1.eBPF入门与Linux环境搭建
+  - 1.eBPF概念与内核态编程
+  - 2.BCC在Ubuntu虚拟机环境搭建
+  - 3.eBPF程序加载与验证流程
+- 13.2.Android eBPF环境搭建与eCapture抓包
   - 模拟器与真机的BCC开发环境搭建
   - vscode远程开发环境搭建
   - ecapture无视证书安卓抓包
-- 13.3.bpftrace学习上
-  - ebpf学习设备的选择
-  - ebpf的实现原理
-  - bpftrace安装环境搭建
-  - bpftrace语法结构的学习
-  - Linux中的跟踪文件系统
-  - bpftrace的4个案例学习
-- 13.4.bpftrace学习下
-- 13.5.bpftracehook安卓native
+- 13.3.bpftrace语法基础与探针入门
+  - 1.eBPF字节码验证与JIT编译
+  - 2.bpftrace环境搭建与配置
+  - 3.bpftrace探针语法与案例实操
+- 13.4.bpftrace高级用法与实战脚本
+  - 1.tracepoint与kprobe探针区别
+  - 2.直方图与数据聚合分析
+  - 3.调用栈追踪与结构体解引用
+- 13.5.bpftrace Hook Android Native函数
+  - 1.uprobe用户态函数探针原理
+  - 2.map_files路径绕过技巧
+  - 3.bpftrace Hook Native函数实操
 
 ---
 
