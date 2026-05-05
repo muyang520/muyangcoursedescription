@@ -1,4 +1,6 @@
 # name	url	sha256	size	package	label
 # Put APK files in GitHub Releases, then write release asset URLs here.
-MT2.26.4.apk	https://github.com/muyang520/muyangcoursedescription/releases/download/apks-v1/MT2.26.4.apk	d012e52c7f45559e3afe71225cb6b909c808bbc2a768675cd5414d08180580b0	30219687	bin.mt.plus	MT管理器 2.26.4
+MT2.26.4.apk	https://github.com/muyang520/muyangcoursedescription/releases/download/apks-v1/MT2.26.4.apk	d012e52c7f45559e3afe71225cb6b909c808bbc2a768675cd5414d08180580b0	30219687	bin.mt.plus	MT Manager 2.26.4
 com.wn.app.np_3.1.38.apk	https://github.com/muyang520/muyangcoursedescription/releases/download/apks-v1/com.wn.app.np_3.1.38.apk	54b654fff4efecb8abbc7c11d8f2ecd67f1a660e8b7744669999c13fe4f37397	46805389	com.wn.app.np	NP管理器 3.1.38
+cn.trinea.android.developertools_6.4.3-gp.apk	https://github.com/muyang520/muyangcoursedescription/releases/download/apks-v1/cn.trinea.android.developertools_6.4.3-gp.apk	f00e8bf81ae5374e727f956444760dbe0a5fc64cb27f0480238e0c27fab53979	5250240	cn.trinea.android.developertools	Dev Tools 6.4.3-gp
+com.junge.algorithmAidePro_1.0.9.apk	https://github.com/muyang520/muyangcoursedescription/releases/download/apks-v1/com.junge.algorithmAidePro_1.0.9.apk	7b5e85dde95fa22946804c6afea2108649d8f241092a53fb247c6e636b37fabc	12039484	com.junge.algorithmAidePro	绠楁硶鍔╂墜Pro 1.0.9
