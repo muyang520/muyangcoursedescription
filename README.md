@@ -81,6 +81,8 @@
 
 课程保持每月更新，紧跟行业技术动态。完整记录见 [CHANGELOG.md](CHANGELOG.md)。
 
+调试环境 APK 在线清单见 [apk-repo/apks.tsv](apk-repo/apks.tsv)，用于“沐阳调试助手”从 GitHub 拉取工具列表。
+
 最近更新（2026年3月）：
 
 安卓新增：

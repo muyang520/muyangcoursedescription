@@ -5,3 +5,12 @@ push.bat
 README_NEW.md
 README_OLD.md
 .claude/
+
+# APK repository artifacts
+*.apk
+*.apks
+*.aab
+*.idsig
+*.zip
+apk-repo/downloads/
+apk-repo/inbox/*.apk
