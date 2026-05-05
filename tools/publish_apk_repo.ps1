@@ -167,7 +167,8 @@ function Write-ManifestRows {
         $lines.Add(($row.Name, $row.Url, $row.Sha, $row.Size, $row.Package, $row.Label) -join "`t")
     }
 
-    Set-Content -Encoding UTF8 -LiteralPath $Path -Value $lines
+    $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+    [System.IO.File]::WriteAllLines($Path, $lines, $utf8NoBom)
 }
 
 function Ensure-Gh {

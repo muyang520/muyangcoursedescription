@@ -25,5 +25,6 @@ Get-ChildItem -LiteralPath $apkPath -Filter "*.apk" | Sort-Object Name | ForEach
     $rows.Add(($name, $url, $sha, $_.Length, "", "") -join "`t")
 }
 
-Set-Content -Encoding UTF8 -LiteralPath $outPath -Value $rows
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+[System.IO.File]::WriteAllLines($outPath, $rows, $utf8NoBom)
 Write-Host "Built manifest: $outPath"

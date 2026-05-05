@@ -1,3 +1,3 @@
-﻿# name	url	sha256	size	package	label
+# name	url	sha256	size	package	label
 # Put APK files in GitHub Releases, then write release asset URLs here.
 MT2.26.4.apk	https://github.com/muyang520/muyangcoursedescription/releases/download/apks-v1/MT2.26.4.apk	d012e52c7f45559e3afe71225cb6b909c808bbc2a768675cd5414d08180580b0	30219687	bin.mt.plus	MT管理器
