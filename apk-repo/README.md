@@ -44,6 +44,15 @@ publish_apk_repo.bat
 
 脚本会自动上传 Release、更新 `apks.tsv`、提交并推送。
 
+BAT 默认使用本机代理 `127.0.0.1:7890`，用于加速 GitHub 上传。临时换端口可以这样执行：
+
+```bat
+set MUYANG_PROXY_PORT=7897
+publish_apk_repo.bat
+```
+
+所有 BAT 结束时都会暂停，方便双击运行后查看成功或失败日志。
+
 如果本机没装 GitHub CLI，可以先只生成清单：
 
 ```bat
