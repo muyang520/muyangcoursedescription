@@ -2,8 +2,8 @@
 
 把要发布到在线仓库的 APK 放到这个目录，然后在仓库根目录执行：
 
-```powershell
-.\tools\publish_apk_repo.ps1
+```bat
+publish_apk_repo.bat
 ```
 
 脚本会自动：

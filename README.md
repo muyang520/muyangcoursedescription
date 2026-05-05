@@ -83,6 +83,12 @@
 
 调试环境 APK 在线清单见 [apk-repo/apks.tsv](apk-repo/apks.tsv)，用于“沐阳调试助手”从 GitHub 拉取工具列表。
 
+更新在线 APK 仓库时，把 APK 放进 `apk-repo/inbox/`，然后执行：
+
+```bat
+publish_apk_repo.bat
+```
+
 最近更新（2026年3月）：
 
 安卓新增：

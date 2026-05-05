@@ -38,16 +38,16 @@ REMOTE_APK_MANIFEST_URL="https://raw.githubusercontent.com/muyang520/muyangcours
 1. 把 APK 放进 `apk-repo/inbox/`。
 2. 在仓库根目录执行：
 
-```powershell
-.\tools\publish_apk_repo.ps1
+```bat
+publish_apk_repo.bat
 ```
 
 脚本会自动上传 Release、更新 `apks.tsv`、提交并推送。
 
 如果本机没装 GitHub CLI，可以先只生成清单：
 
-```powershell
-.\tools\publish_apk_repo.ps1 -SkipUpload -SkipCommit
+```bat
+publish_apk_repo.bat -SkipUpload -SkipCommit
 ```
 
 后续新增 APK，只需要更新 Release asset 和 `apks.tsv`，不需要重新打模块。
