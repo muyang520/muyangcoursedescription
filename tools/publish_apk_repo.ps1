@@ -18,28 +18,17 @@ $script:GhPath = ""
 
 function Find-Gh {
     $cmd = Get-Command gh -ErrorAction SilentlyContinue
-    if ($cmd) {
-        return $cmd.Source
-    }
+    if ($cmd) { return $cmd.Source }
 
-    $candidates = @(
-        "C:\Program Files\GitHub CLI\gh.exe",
-        "C:\Program Files (x86)\GitHub CLI\gh.exe"
-    )
+    foreach ($path in @("C:\Program Files\GitHub CLI\gh.exe", "C:\Program Files (x86)\GitHub CLI\gh.exe")) {
+        if (Test-Path -LiteralPath $path) { return $path }
+    }
 
     $wingetDir = Join-Path $env:LOCALAPPDATA "Microsoft\WinGet\Packages"
     if (Test-Path -LiteralPath $wingetDir) {
         $found = Get-ChildItem -LiteralPath $wingetDir -Recurse -Filter "gh.exe" -ErrorAction SilentlyContinue |
             Select-Object -First 1
-        if ($found) {
-            return $found.FullName
-        }
-    }
-
-    foreach ($path in $candidates) {
-        if (Test-Path -LiteralPath $path) {
-            return $path
-        }
+        if ($found) { return $found.FullName }
     }
 
     return ""
@@ -55,9 +44,7 @@ function Find-Aapt {
     $candidates = @()
     foreach ($envName in "ANDROID_HOME", "ANDROID_SDK_ROOT") {
         $sdk = [Environment]::GetEnvironmentVariable($envName)
-        if ($sdk) {
-            $candidates += Join-Path $sdk "build-tools"
-        }
+        if ($sdk) { $candidates += Join-Path $sdk "build-tools" }
     }
     $candidates += "D:\software\androidSDK\build-tools"
 
@@ -66,9 +53,7 @@ function Find-Aapt {
             $found = Get-ChildItem -LiteralPath $dir -Recurse -Filter "aapt.exe" -ErrorAction SilentlyContinue |
                 Sort-Object FullName -Descending |
                 Select-Object -First 1
-            if ($found) {
-                return $found.FullName
-            }
+            if ($found) { return $found.FullName }
         }
     }
 
@@ -88,28 +73,19 @@ function Read-ApkInfo {
         VersionCode = ""
     }
 
-    if (-not $AaptPath) {
-        return $info
-    }
+    if (-not $AaptPath) { return $info }
 
-    $parseFile = $ApkFile
     $tempFile = ""
     try {
-        # aapt on Windows may fail when the absolute path contains non-ASCII characters.
         $tempFile = Join-Path $env:TEMP ("muyang-aapt-" + [guid]::NewGuid().ToString("N") + ".apk")
         Copy-Item -LiteralPath $ApkFile -Destination $tempFile -Force
-        $parseFile = $tempFile
 
-        $badging = & $AaptPath dump badging $parseFile 2>$null
+        $badging = & $AaptPath dump badging $tempFile 2>$null
         foreach ($line in $badging) {
             if (-not $info.Package -and $line -match "package: name='([^']+)'") {
                 $info.Package = $Matches[1]
-                if ($line -match "versionName='([^']+)'") {
-                    $info.VersionName = $Matches[1]
-                }
-                if ($line -match "versionCode='([^']+)'") {
-                    $info.VersionCode = $Matches[1]
-                }
+                if ($line -match "versionName='([^']+)'") { $info.VersionName = $Matches[1] }
+                if ($line -match "versionCode='([^']+)'") { $info.VersionCode = $Matches[1] }
             }
             if ($line -match "application-label-zh-CN:'([^']*)'") {
                 $info.Label = $Matches[1]
@@ -130,28 +106,6 @@ function Read-ApkInfo {
     return $info
 }
 
-function Join-LabelVersion {
-    param(
-        [string]$Label,
-        [string]$VersionName,
-        [string]$VersionCode
-    )
-
-    $base = if ($Label) { $Label.Trim() } else { "" }
-    $version = if ($VersionName) { $VersionName.Trim() } elseif ($VersionCode) { $VersionCode.Trim() } else { "" }
-
-    if (-not $base) {
-        return $version
-    }
-    if (-not $version) {
-        return $base
-    }
-    if ($base -match [regex]::Escape($version)) {
-        return $base
-    }
-    return "$base $version"
-}
-
 function Get-LabelFromFileName {
     param(
         [string]$FileName,
@@ -166,10 +120,28 @@ function Get-LabelFromFileName {
         }
     }
     $label = ($label -replace "[_-]+", " ").Trim()
-    if ($label) {
-        return $label
-    }
+    if ($label) { return $label }
     return [IO.Path]::GetFileNameWithoutExtension($FileName)
+}
+
+function Join-LabelVersion {
+    param(
+        [string]$Label,
+        [string]$VersionName,
+        [string]$VersionCode
+    )
+
+    $base = if ($Label) { $Label.Trim() } else { "" }
+    $version = if ($VersionName) { $VersionName.Trim() } elseif ($VersionCode) { $VersionCode.Trim() } else { "" }
+    if (-not $base) { return $version }
+    if (-not $version) { return $base }
+    if ($base -match [regex]::Escape($version)) { return $base }
+    return "$base $version"
+}
+
+function Has-NonAscii {
+    param([string]$Value)
+    return $Value -match "[^\u0000-\u007F]"
 }
 
 function Get-SafeAssetName {
@@ -180,14 +152,10 @@ function Get-SafeAssetName {
         [string]$VersionCode
     )
 
-    if ($FileName -match "^[A-Za-z0-9._-]+$") {
-        return $FileName
-    }
+    if ($FileName -match "^[A-Za-z0-9._-]+$") { return $FileName }
 
     $ext = [IO.Path]::GetExtension($FileName)
-    if (-not $ext) {
-        $ext = ".apk"
-    }
+    if (-not $ext) { $ext = ".apk" }
 
     $version = if ($VersionName) { $VersionName.Trim() } elseif ($VersionCode) { $VersionCode.Trim() } else { "" }
     $base = if ($PackageName) { $PackageName.Trim() } else { [IO.Path]::GetFileNameWithoutExtension($FileName) }
@@ -196,73 +164,19 @@ function Get-SafeAssetName {
     }
 
     $safe = ($base -replace "[^A-Za-z0-9._-]+", "_").Trim([char[]]"._-")
-    if (-not $safe) {
-        $safe = "apk"
-    }
+    if (-not $safe) { $safe = "apk" }
     return "$safe$ext"
-}
-
-function Find-ExistingRow {
-    param(
-        [System.Collections.Specialized.OrderedDictionary]$Rows,
-        [string]$Name,
-        [string]$Sha
-    )
-
-    if ($Rows.Contains($Name)) {
-        return $Rows[$Name]
-    }
-
-    if ($Sha) {
-        foreach ($key in $Rows.Keys) {
-            if ($Rows[$key].Sha -eq $Sha) {
-                return $Rows[$key]
-            }
-        }
-    }
-
-    return $null
-}
-
-function Remove-StaleRows {
-    param(
-        [System.Collections.Specialized.OrderedDictionary]$Rows,
-        [string]$OriginalName,
-        [string]$AssetName,
-        [string]$Sha,
-        [string]$PackageName
-    )
-
-    $removeKeys = @()
-    foreach ($key in $Rows.Keys) {
-        if ($key -eq $AssetName) {
-            continue
-        }
-
-        $row = $Rows[$key]
-        if ($key -eq $OriginalName -or ($Sha -and $row.Sha -eq $Sha) -or ($PackageName -and $row.Package -eq $PackageName)) {
-            $removeKeys += $key
-        }
-    }
-
-    foreach ($key in $removeKeys) {
-        [void]$Rows.Remove($key)
-    }
 }
 
 function Read-ManifestRows {
     param([string]$Path)
 
     $rows = [ordered]@{}
-    if (-not (Test-Path -LiteralPath $Path)) {
-        return $rows
-    }
+    if (-not (Test-Path -LiteralPath $Path)) { return $rows }
 
     Get-Content -Encoding UTF8 -LiteralPath $Path | ForEach-Object {
         $line = $_
-        if ($line.Trim().Length -eq 0 -or $line.TrimStart().StartsWith("#")) {
-            return
-        }
+        if ($line.Trim().Length -eq 0 -or $line.TrimStart().StartsWith("#")) { return }
         $parts = $line -split "`t", -1
         if ($parts.Count -ge 2) {
             $name = $parts[0]
@@ -299,6 +213,42 @@ function Write-ManifestRows {
     [System.IO.File]::WriteAllLines($Path, $lines, $utf8NoBom)
 }
 
+function Find-ExistingRow {
+    param(
+        [System.Collections.Specialized.OrderedDictionary]$Rows,
+        [string]$Name,
+        [string]$Sha
+    )
+
+    if ($Rows.Contains($Name)) { return $Rows[$Name] }
+    if ($Sha) {
+        foreach ($key in $Rows.Keys) {
+            if ($Rows[$key].Sha -eq $Sha) { return $Rows[$key] }
+        }
+    }
+    return $null
+}
+
+function Remove-StaleRows {
+    param(
+        [System.Collections.Specialized.OrderedDictionary]$Rows,
+        [string]$OriginalName,
+        [string]$AssetName,
+        [string]$Sha,
+        [string]$PackageName
+    )
+
+    $removeKeys = @()
+    foreach ($key in $Rows.Keys) {
+        if ($key -eq $AssetName) { continue }
+        $row = $Rows[$key]
+        if ($key -eq $OriginalName -or ($Sha -and $row.Sha -eq $Sha) -or ($PackageName -and $row.Package -eq $PackageName)) {
+            $removeKeys += $key
+        }
+    }
+    foreach ($key in $removeKeys) { [void]$Rows.Remove($key) }
+}
+
 function Ensure-Gh {
     $script:GhPath = Find-Gh
     if (-not $script:GhPath) {
@@ -324,18 +274,8 @@ function Ensure-Release {
 
     if ($viewCode -ne 0) {
         & $script:GhPath release create $Tag --repo $RepoName --title $Tag --notes "APK assets for Muyang Debug Helper."
-        if ($LASTEXITCODE -ne 0) {
-            throw "Create GitHub release failed: $Tag"
-        }
+        if ($LASTEXITCODE -ne 0) { throw "Create GitHub release failed: $Tag" }
     }
-}
-
-function Git-HasChanges {
-    git diff --quiet -- $Manifest
-    if ($LASTEXITCODE -ne 0) {
-        return $true
-    }
-    return $false
 }
 
 if (-not (Test-Path -LiteralPath $apkPath)) {
@@ -359,42 +299,26 @@ if (-not $SkipUpload) {
     Ensure-Release -RepoName $Repo -Tag $ReleaseTag
 }
 
-$rows = if ($ReplaceManifest) {
-    [ordered]@{}
-} else {
-    Read-ManifestRows -Path $manifestPath
-}
+$rows = if ($ReplaceManifest) { [ordered]@{} } else { Read-ManifestRows -Path $manifestPath }
 
 foreach ($apk in $apks) {
     $name = $apk.Name
     $sha = (Get-FileHash -Algorithm SHA256 -LiteralPath $apk.FullName).Hash.ToLowerInvariant()
     $info = Read-ApkInfo -ApkFile $apk.FullName -AaptPath $aaptPath
     $old = Find-ExistingRow -Rows $rows -Name $name -Sha $sha
-    $packageName = if ($info.Package) {
-        $info.Package
-    } elseif ($old -and $old.Package) {
-        $old.Package
-    } else {
-        ""
-    }
+    $packageName = if ($info.Package) { $info.Package } elseif ($old -and $old.Package) { $old.Package } else { "" }
     $assetName = Get-SafeAssetName -FileName $name -PackageName $packageName -VersionName $info.VersionName -VersionCode $info.VersionCode
     $url = "https://github.com/$Repo/releases/download/$ReleaseTag/" + [uri]::EscapeDataString($assetName)
-    $baseLabel = if ($info.Label) {
-        $info.Label
-    } else {
-        Get-LabelFromFileName -FileName $name -VersionName $info.VersionName -VersionCode $info.VersionCode
-    }
+
+    $fileLabel = Get-LabelFromFileName -FileName $name -VersionName $info.VersionName -VersionCode $info.VersionCode
+    $baseLabel = if (Has-NonAscii $name) { $fileLabel } elseif ($info.Label) { $info.Label } else { $fileLabel }
     $label = Join-LabelVersion -Label $baseLabel -VersionName $info.VersionName -VersionCode $info.VersionCode
 
     Write-Host "APK: $name"
-    if ($assetName -ne $name) {
-        Write-Host "  release asset: $assetName"
-    }
+    if ($assetName -ne $name) { Write-Host "  release asset: $assetName" }
     Write-Host "  package: $packageName"
     Write-Host "  label: $label"
-    if ($info.VersionName) {
-        Write-Host "  version: $($info.VersionName)"
-    }
+    if ($info.VersionName) { Write-Host "  version: $($info.VersionName)" }
     Write-Host "  sha256: $sha"
 
     if (-not $SkipUpload) {
@@ -412,9 +336,7 @@ foreach ($apk in $apks) {
             }
 
             & $script:GhPath release upload $ReleaseTag $uploadPath --repo $Repo --clobber
-            if ($LASTEXITCODE -ne 0) {
-                throw "Upload failed: $name"
-            }
+            if ($LASTEXITCODE -ne 0) { throw "Upload failed: $name" }
         } finally {
             if ($tempUploadPath -and (Test-Path -LiteralPath $tempUploadPath)) {
                 Remove-Item -LiteralPath $tempUploadPath -Force
@@ -423,7 +345,6 @@ foreach ($apk in $apks) {
     }
 
     Remove-StaleRows -Rows $rows -OriginalName $name -AssetName $assetName -Sha $sha -PackageName $packageName
-
     $rows[$assetName] = @{
         Name = $assetName
         Url = $url
@@ -438,9 +359,7 @@ Write-ManifestRows -Path $manifestPath -Rows $rows
 Write-Host "Updated manifest: $manifestPath"
 
 if (-not $SkipCommit) {
-    git add -- $Manifest
-    git add -- "apk-repo/README.md" "apk-repo/inbox/README.md" "tools/publish_apk_repo.ps1" "tools/build_apk_manifest.ps1" ".gitignore" "README.md"
-
+    git add -- $Manifest "tools/publish_apk_repo.ps1" "publish_apk_repo.bat"
     git diff --cached --quiet
     if ($LASTEXITCODE -eq 0) {
         Write-Host "No git changes to commit."
