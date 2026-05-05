@@ -84,6 +84,8 @@ function Read-ApkInfo {
     $info = @{
         Package = ""
         Label = ""
+        VersionName = ""
+        VersionCode = ""
     }
 
     if (-not $AaptPath) {
@@ -102,6 +104,12 @@ function Read-ApkInfo {
         foreach ($line in $badging) {
             if (-not $info.Package -and $line -match "package: name='([^']+)'") {
                 $info.Package = $Matches[1]
+                if ($line -match "versionName='([^']+)'") {
+                    $info.VersionName = $Matches[1]
+                }
+                if ($line -match "versionCode='([^']+)'") {
+                    $info.VersionCode = $Matches[1]
+                }
             }
             if ($line -match "application-label-zh-CN:'([^']*)'") {
                 $info.Label = $Matches[1]
@@ -120,6 +128,28 @@ function Read-ApkInfo {
     }
 
     return $info
+}
+
+function Join-LabelVersion {
+    param(
+        [string]$Label,
+        [string]$VersionName,
+        [string]$VersionCode
+    )
+
+    $base = if ($Label) { $Label.Trim() } else { "" }
+    $version = if ($VersionName) { $VersionName.Trim() } elseif ($VersionCode) { $VersionCode.Trim() } else { "" }
+
+    if (-not $base) {
+        return $version
+    }
+    if (-not $version) {
+        return $base
+    }
+    if ($base -match [regex]::Escape($version)) {
+        return $base
+    }
+    return "$base $version"
 }
 
 function Read-ManifestRows {
@@ -250,17 +280,19 @@ foreach ($apk in $apks) {
     } else {
         ""
     }
-    $label = if ($info.Label) {
+    $baseLabel = if ($info.Label) {
         $info.Label
-    } elseif ($old -and $old.Label) {
-        $old.Label
     } else {
         [IO.Path]::GetFileNameWithoutExtension($name)
     }
+    $label = Join-LabelVersion -Label $baseLabel -VersionName $info.VersionName -VersionCode $info.VersionCode
 
     Write-Host "APK: $name"
     Write-Host "  package: $packageName"
     Write-Host "  label: $label"
+    if ($info.VersionName) {
+        Write-Host "  version: $($info.VersionName)"
+    }
     Write-Host "  sha256: $sha"
 
     if (-not $SkipUpload) {
