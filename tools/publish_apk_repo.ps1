@@ -152,6 +152,104 @@ function Join-LabelVersion {
     return "$base $version"
 }
 
+function Get-LabelFromFileName {
+    param(
+        [string]$FileName,
+        [string]$VersionName,
+        [string]$VersionCode
+    )
+
+    $label = [IO.Path]::GetFileNameWithoutExtension($FileName)
+    foreach ($version in @($VersionName, $VersionCode)) {
+        if ($version) {
+            $label = $label -replace ("[\s_.-]*" + [regex]::Escape($version) + "$"), ""
+        }
+    }
+    $label = ($label -replace "[_-]+", " ").Trim()
+    if ($label) {
+        return $label
+    }
+    return [IO.Path]::GetFileNameWithoutExtension($FileName)
+}
+
+function Get-SafeAssetName {
+    param(
+        [string]$FileName,
+        [string]$PackageName,
+        [string]$VersionName,
+        [string]$VersionCode
+    )
+
+    if ($FileName -match "^[A-Za-z0-9._-]+$") {
+        return $FileName
+    }
+
+    $ext = [IO.Path]::GetExtension($FileName)
+    if (-not $ext) {
+        $ext = ".apk"
+    }
+
+    $version = if ($VersionName) { $VersionName.Trim() } elseif ($VersionCode) { $VersionCode.Trim() } else { "" }
+    $base = if ($PackageName) { $PackageName.Trim() } else { [IO.Path]::GetFileNameWithoutExtension($FileName) }
+    if ($version -and $base -notmatch [regex]::Escape($version)) {
+        $base = "{0}_{1}" -f $base, $version
+    }
+
+    $safe = ($base -replace "[^A-Za-z0-9._-]+", "_").Trim([char[]]"._-")
+    if (-not $safe) {
+        $safe = "apk"
+    }
+    return "$safe$ext"
+}
+
+function Find-ExistingRow {
+    param(
+        [System.Collections.Specialized.OrderedDictionary]$Rows,
+        [string]$Name,
+        [string]$Sha
+    )
+
+    if ($Rows.Contains($Name)) {
+        return $Rows[$Name]
+    }
+
+    if ($Sha) {
+        foreach ($key in $Rows.Keys) {
+            if ($Rows[$key].Sha -eq $Sha) {
+                return $Rows[$key]
+            }
+        }
+    }
+
+    return $null
+}
+
+function Remove-StaleRows {
+    param(
+        [System.Collections.Specialized.OrderedDictionary]$Rows,
+        [string]$OriginalName,
+        [string]$AssetName,
+        [string]$Sha,
+        [string]$PackageName
+    )
+
+    $removeKeys = @()
+    foreach ($key in $Rows.Keys) {
+        if ($key -eq $AssetName) {
+            continue
+        }
+
+        $row = $Rows[$key]
+        if ($key -eq $OriginalName -or ($Sha -and $row.Sha -eq $Sha) -or ($PackageName -and $row.Package -eq $PackageName)) {
+            $removeKeys += $key
+        }
+    }
+
+    foreach ($key in $removeKeys) {
+        [void]$Rows.Remove($key)
+    }
+}
+
 function Read-ManifestRows {
     param([string]$Path)
 
@@ -270,9 +368,8 @@ $rows = if ($ReplaceManifest) {
 foreach ($apk in $apks) {
     $name = $apk.Name
     $sha = (Get-FileHash -Algorithm SHA256 -LiteralPath $apk.FullName).Hash.ToLowerInvariant()
-    $url = "https://github.com/$Repo/releases/download/$ReleaseTag/" + [uri]::EscapeDataString($name)
     $info = Read-ApkInfo -ApkFile $apk.FullName -AaptPath $aaptPath
-    $old = if ($rows.Contains($name)) { $rows[$name] } else { $null }
+    $old = Find-ExistingRow -Rows $rows -Name $name -Sha $sha
     $packageName = if ($info.Package) {
         $info.Package
     } elseif ($old -and $old.Package) {
@@ -280,14 +377,19 @@ foreach ($apk in $apks) {
     } else {
         ""
     }
+    $assetName = Get-SafeAssetName -FileName $name -PackageName $packageName -VersionName $info.VersionName -VersionCode $info.VersionCode
+    $url = "https://github.com/$Repo/releases/download/$ReleaseTag/" + [uri]::EscapeDataString($assetName)
     $baseLabel = if ($info.Label) {
         $info.Label
     } else {
-        [IO.Path]::GetFileNameWithoutExtension($name)
+        Get-LabelFromFileName -FileName $name -VersionName $info.VersionName -VersionCode $info.VersionCode
     }
     $label = Join-LabelVersion -Label $baseLabel -VersionName $info.VersionName -VersionCode $info.VersionCode
 
     Write-Host "APK: $name"
+    if ($assetName -ne $name) {
+        Write-Host "  release asset: $assetName"
+    }
     Write-Host "  package: $packageName"
     Write-Host "  label: $label"
     if ($info.VersionName) {
@@ -296,14 +398,34 @@ foreach ($apk in $apks) {
     Write-Host "  sha256: $sha"
 
     if (-not $SkipUpload) {
-        & $script:GhPath release upload $ReleaseTag $apk.FullName --repo $Repo --clobber
-        if ($LASTEXITCODE -ne 0) {
-            throw "Upload failed: $name"
+        $uploadPath = $apk.FullName
+        $tempUploadPath = ""
+        try {
+            if ($assetName -ne $name) {
+                $tempUploadDir = Join-Path $env:TEMP "muyang-release-assets"
+                if (-not (Test-Path -LiteralPath $tempUploadDir)) {
+                    New-Item -ItemType Directory -Force -Path $tempUploadDir | Out-Null
+                }
+                $tempUploadPath = Join-Path $tempUploadDir $assetName
+                Copy-Item -LiteralPath $apk.FullName -Destination $tempUploadPath -Force
+                $uploadPath = $tempUploadPath
+            }
+
+            & $script:GhPath release upload $ReleaseTag $uploadPath --repo $Repo --clobber
+            if ($LASTEXITCODE -ne 0) {
+                throw "Upload failed: $name"
+            }
+        } finally {
+            if ($tempUploadPath -and (Test-Path -LiteralPath $tempUploadPath)) {
+                Remove-Item -LiteralPath $tempUploadPath -Force
+            }
         }
     }
 
-    $rows[$name] = @{
-        Name = $name
+    Remove-StaleRows -Rows $rows -OriginalName $name -AssetName $assetName -Sha $sha -PackageName $packageName
+
+    $rows[$assetName] = @{
+        Name = $assetName
         Url = $url
         Sha = $sha
         Size = [string]$apk.Length
