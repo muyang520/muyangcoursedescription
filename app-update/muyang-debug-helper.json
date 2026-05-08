@@ -1,0 +1,13 @@
+{
+  "appId": "com.muyang.debughelper",
+  "versionCode": 2,
+  "versionName": "1.1",
+  "downloadUrl": "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-v1.1/muyang_debug_helper.apk",
+  "releasePage": "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-v1.1",
+  "sha256": "182737961ae8c96ad85f000a51ff936b7bd486d7db77004fb787e81b047f9131",
+  "changelog": [
+    "新增应用更新入口",
+    "抓包转发页整合抓包 CA 操作",
+    "首页 IP 显示过滤虚拟网卡地址"
+  ]
+}
