@@ -1,13 +1,13 @@
 {
   "appId": "com.muyang.debughelper",
-  "versionCode": 2,
-  "versionName": "1.1",
-  "downloadUrl": "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-v1.1/muyang_debug_helper.apk",
-  "releasePage": "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-v1.1",
-  "sha256": "182737961ae8c96ad85f000a51ff936b7bd486d7db77004fb787e81b047f9131",
+  "versionCode": 3,
+  "versionName": "1.2",
+  "downloadUrl": "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-v1.2/muyang_debug_helper.apk",
+  "releasePage": "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-v1.2",
+  "sha256": "97dcdd25bbaafbb2cc9b6c787ac175ca670838a7ddf5257c376925ecdd49897d",
   "changelog": [
-    "新增应用更新入口",
-    "抓包转发页整合抓包 CA 操作",
-    "首页 IP 显示过滤虚拟网卡地址"
+    "登录和注册请求新增设备信息上报",
+    "本地登录服务保存设备列表和会话设备信息",
+    "版本升级到 1.2"
   ]
 }
