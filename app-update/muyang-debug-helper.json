@@ -1,16 +1,16 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001003,
-    "versionName":  "1.1.3",
+    "versionCode":  1001004,
+    "versionName":  "1.1.4",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "2eb844f30cf10f28e0d94c0ae49922e0184e2266202a44fd0791bbade6e0337d",
-    "sizeBytes":  739953,
-    "publishedAt":  "2026-05-09T06:45:36Z",
+    "sha256":  "655494e24854ef708bf9b7e797dafd5f3b2b7ad3dbb16ad91e0add13f790d55c",
+    "sizeBytes":  739954,
+    "publishedAt":  "2026-05-09T07:00:28Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "默认设备绑定数量改为不限制",
-                      "Web 后台新增今日登录、邮箱绑定、设备不限等统计",
-                      "优化抓包转发页面，节点卡片和转发范围卡片可直接进入对应页面"
+                      "抓包 CA 只保留证书状态",
+                      "证书状态改为简洁显示用户证书是否进入系统目录",
+                      "优化抓包链路布局，代理节点和转发范围不再拥挤"
                   ]
 }
