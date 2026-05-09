@@ -1,16 +1,17 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001005,
-    "versionName":  "1.1.5",
+    "versionCode":  1001006,
+    "versionName":  "1.1.6",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "0551a82430186f227d63846122fd82f84ca7dd713c2a0601ca057b1f2494b88b",
-    "sizeBytes":  658032,
-    "publishedAt":  "2026-05-09T07:17:09Z",
+    "sha256":  "2c9ab833aa374516def4804ca29d28ea92723f9dd1c078091ef91896b9822da1",
+    "sizeBytes":  662131,
+    "publishedAt":  "2026-05-09T07:27:39Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "一键初始化自动导入并即时挂载用户证书",
-                      "Root 权限缺失时提示去授权",
-                      "开启基础代码混淆"
+                      "新增功能页全局登录门禁，防止直接打开敏感 Activity",
+                      "VPN 转发服务启动前校验当前会话",
+                      "后台登录/验证码增加限流和设备绑定校验",
+                      "启动脚本移除 SMTP 授权码与管理员密码明文输出"
                   ]
 }
