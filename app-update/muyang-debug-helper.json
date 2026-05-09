@@ -1,16 +1,16 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001007,
-    "versionName":  "1.1.7",
+    "versionCode":  1001008,
+    "versionName":  "1.1.8",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "8fa0171c6864708c3d2fdfe50ccd9cba05db827ab0b9ee2e6d1d0323e213332f",
-    "sizeBytes":  662131,
-    "publishedAt":  "2026-05-09T07:40:51Z",
+    "sha256":  "fb906eb1e48a755605c14fa43a46caef49ee1fa5141989671d730b6414e3ed04",
+    "sizeBytes":  662128,
+    "publishedAt":  "2026-05-09T07:45:44Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "APK 自身网络请求绕过系统代理，避免开梯子后无法访问本地后台",
-                      "禁止把助手自身作为 VPN 转发目标",
-                      "继续排除助手自身流量，避免转发链路影响登录、公告和更新"
+                      "访问局域网后台时优先使用非 VPN 的 WiFi/以太网网络",
+                      "新增网络状态权限用于识别 VPN 与 WiFi 网络",
+                      "优化开梯子后读取游客登录开关失败的问题"
                   ]
 }
