@@ -1,17 +1,16 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001006,
-    "versionName":  "1.1.6",
+    "versionCode":  1001007,
+    "versionName":  "1.1.7",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "2c9ab833aa374516def4804ca29d28ea92723f9dd1c078091ef91896b9822da1",
+    "sha256":  "8fa0171c6864708c3d2fdfe50ccd9cba05db827ab0b9ee2e6d1d0323e213332f",
     "sizeBytes":  662131,
-    "publishedAt":  "2026-05-09T07:27:39Z",
+    "publishedAt":  "2026-05-09T07:40:51Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "新增功能页全局登录门禁，防止直接打开敏感 Activity",
-                      "VPN 转发服务启动前校验当前会话",
-                      "后台登录/验证码增加限流和设备绑定校验",
-                      "启动脚本移除 SMTP 授权码与管理员密码明文输出"
+                      "APK 自身网络请求绕过系统代理，避免开梯子后无法访问本地后台",
+                      "禁止把助手自身作为 VPN 转发目标",
+                      "继续排除助手自身流量，避免转发链路影响登录、公告和更新"
                   ]
 }
