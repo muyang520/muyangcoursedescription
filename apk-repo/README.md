@@ -26,7 +26,7 @@ MT2.26.4.apk	https://github.com/muyang520/muyangcoursedescription/releases/downl
 把下面这个 raw 地址填进模块的 `config/remote-repo.conf`：
 
 ```sh
-REMOTE_APK_MANIFEST_URL="https://raw.githubusercontent.com/muyang520/muyangcoursedescription/main/apk-repo/apks.tsv"
+REMOTE_APK_MANIFEST_URL="https://api.github.com/repos/muyang520/muyangcoursedescription/contents/apk-repo/apks.tsv?ref=main"
 ```
 
 刷入模块并重启后，打开“沐阳调试助手”，点击刷新即可读取在线 APK。
