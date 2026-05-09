@@ -1,16 +1,16 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001004,
-    "versionName":  "1.1.4",
+    "versionCode":  1001005,
+    "versionName":  "1.1.5",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "655494e24854ef708bf9b7e797dafd5f3b2b7ad3dbb16ad91e0add13f790d55c",
-    "sizeBytes":  739954,
-    "publishedAt":  "2026-05-09T07:00:28Z",
+    "sha256":  "0551a82430186f227d63846122fd82f84ca7dd713c2a0601ca057b1f2494b88b",
+    "sizeBytes":  658032,
+    "publishedAt":  "2026-05-09T07:17:09Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "抓包 CA 只保留证书状态",
-                      "证书状态改为简洁显示用户证书是否进入系统目录",
-                      "优化抓包链路布局，代理节点和转发范围不再拥挤"
+                      "一键初始化自动导入并即时挂载用户证书",
+                      "Root 权限缺失时提示去授权",
+                      "开启基础代码混淆"
                   ]
 }
