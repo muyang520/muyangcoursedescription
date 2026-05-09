@@ -1,13 +1,14 @@
 {
-  "appId": "com.muyang.debughelper",
-  "versionCode": 3,
-  "versionName": "1.2",
-  "downloadUrl": "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-v1.2/muyang_debug_helper.apk",
-  "releasePage": "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-v1.2",
-  "sha256": "97dcdd25bbaafbb2cc9b6c787ac175ca670838a7ddf5257c376925ecdd49897d",
-  "changelog": [
-    "登录和注册请求新增设备信息上报",
-    "本地登录服务保存设备列表和会话设备信息",
-    "版本升级到 1.2"
-  ]
+    "appId":  "com.muyang.debughelper",
+    "versionCode":  13,
+    "versionName":  "1.12",
+    "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
+    "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
+    "sha256":  "62bf7b24983413c3cff691fa8777c690376fbe527efe3f68b740d02d7b6b1bf0",
+    "sizeBytes":  735859,
+    "publishedAt":  "2026-05-09T02:23:55Z",
+    "changelog":  [
+                      "固定为单一更新Release",
+                      "清理旧版本更新Release"
+                  ]
 }
