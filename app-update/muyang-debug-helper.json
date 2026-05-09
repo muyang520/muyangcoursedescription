@@ -1,16 +1,16 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001011,
-    "versionName":  "1.1.11",
+    "versionCode":  1001012,
+    "versionName":  "1.1.12",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "5b4ea4a8dce2b57fa111ad2afce474c02d7125949f4e97635047354ab080042f",
+    "sha256":  "3917ba9402d0a2585f8a3758fb3c527a1a4b9343b55fe3c3cad4b6a27278ab32",
     "sizeBytes":  662131,
-    "publishedAt":  "2026-05-09T13:32:08Z",
+    "publishedAt":  "2026-05-09T13:34:43Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "游客登录上报设备信息",
-                      "后台新增游客设备统计",
-                      "作者介绍改为后台管理并支持可点击链接"
+                      "恢复系统默认网络访问",
+                      "允许登录、更新和在线内容走VPN或代理工具",
+                      "抓包节点测试不再强制绑定非VPN网络"
                   ]
 }
