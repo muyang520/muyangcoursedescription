@@ -1,15 +1,16 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  14,
-    "versionName":  "1.13",
+    "versionCode":  1001001,
+    "versionName":  "1.1.1",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "e4f88951b33b6065689bbfe2d2990f71d4c82a3e643476656457379a8e65e0fe",
+    "sha256":  "dec71f450a464a8b4a2157d2f45720c3b3e0598bf08edd040b3d6c81733e57b2",
     "sizeBytes":  739954,
-    "publishedAt":  "2026-05-09T02:40:45Z",
+    "publishedAt":  "2026-05-09T02:51:11Z",
+    "forceUpdate":  true,
     "changelog":  [
-                      "新增首页“关于 APK / 更新日志”入口",
-                      "新增关于 APK 页面，显示当前版本、线上版本、更新日志和发布地址",
-                      "用于测试启动自动更新弹窗与应用更新页面"
+                      "版本号改为只使用 GitHub 版本，例如 1.1.1、1.1.2",
+                      "发布脚本自动生成 Android 内部版本代码，不需要手动填写",
+                      "发现新版本后强制更新，不能跳过"
                   ]
 }
