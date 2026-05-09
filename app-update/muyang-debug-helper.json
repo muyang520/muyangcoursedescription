@@ -6,9 +6,8 @@
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
     "sha256":  "62bf7b24983413c3cff691fa8777c690376fbe527efe3f68b740d02d7b6b1bf0",
     "sizeBytes":  735859,
-    "publishedAt":  "2026-05-09T02:23:55Z",
+    "publishedAt":  "2026-05-09T02:25:48Z",
     "changelog":  [
-                      "固定为单一更新Release",
-                      "清理旧版本更新Release"
+                      "固定为单一更新 Release\n清理旧版本更新 Release"
                   ]
 }
