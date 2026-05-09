@@ -1,16 +1,16 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001001,
-    "versionName":  "1.1.1",
+    "versionCode":  1001002,
+    "versionName":  "1.1.2",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "dec71f450a464a8b4a2157d2f45720c3b3e0598bf08edd040b3d6c81733e57b2",
+    "sha256":  "c889e55765633823865b97e452f988bc7f8f3f7dc793e4da684c02dfe1a3fb1c",
     "sizeBytes":  739954,
-    "publishedAt":  "2026-05-09T02:51:11Z",
+    "publishedAt":  "2026-05-09T02:58:43Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "版本号改为只使用 GitHub 版本，例如 1.1.1、1.1.2",
-                      "发布脚本自动生成 Android 内部版本代码，不需要手动填写",
-                      "发现新版本后强制更新，不能跳过"
+                      "注册支持邮箱验证码",
+                      "支持用邮箱作为登录账号",
+                      "SMTP 未配置时验证码会显示在本地服务端窗口，方便测试"
                   ]
 }
