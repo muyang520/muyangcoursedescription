@@ -1,16 +1,16 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001008,
-    "versionName":  "1.1.8",
+    "versionCode":  1001009,
+    "versionName":  "1.1.9",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "fb906eb1e48a755605c14fa43a46caef49ee1fa5141989671d730b6414e3ed04",
-    "sizeBytes":  662128,
-    "publishedAt":  "2026-05-09T07:45:44Z",
+    "sha256":  "52eb1e3f366decf0dece02516c6951e80d0455e76c946e58d43d9cd12cf6869b",
+    "sizeBytes":  662129,
+    "publishedAt":  "2026-05-09T09:48:37Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "访问局域网后台时优先使用非 VPN 的 WiFi/以太网网络",
-                      "新增网络状态权限用于识别 VPN 与 WiFi 网络",
-                      "优化开梯子后读取游客登录开关失败的问题"
+                      "所有 APK 自身网络请求强制绑定非 VPN WiFi/以太网网络",
+                      "首页入口合并为关于",
+                      "关于页新增 Web 作者介绍并在应用进程内只读取一次"
                   ]
 }
