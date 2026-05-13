@@ -1,14 +1,14 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001016,
-    "versionName":  "1.1.16",
+    "versionCode":  1001017,
+    "versionName":  "1.1.17",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "f052354ded12d20dca59bac134299ddf4979353e24fa0d474a3eda0127ab07af",
-    "sizeBytes":  744188,
-    "publishedAt":  "2026-05-13T14:59:09Z",
+    "sha256":  "be1b0ced060d75b9c0e56e3f4f171907fadcd7a9bc0c5b1610200a9129de8573",
+    "sizeBytes":  744191,
+    "publishedAt":  "2026-05-13T15:22:46Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "修复 Android 14 一键初始化证书导入：支持 /data/local/tmp/cert 下 PEM/CRT/CER/DER 自动转换为 hash.0；转换缓存不混入系统证书挂载目录；证书状态显示 APEX 挂载说明。"
+                      "修复用户证书目录漏处理 .1/.2 等 hash 后缀的问题：现在读取、复制、统计、状态检测都支持 Android 证书文件 hash.数字，避免 c8750f0d.1 这类证书没有进入系统可见目录。"
                   ]
 }
