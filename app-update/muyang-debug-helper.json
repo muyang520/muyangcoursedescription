@@ -1,16 +1,16 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001014,
-    "versionName":  "1.1.14",
+    "versionCode":  1001015,
+    "versionName":  "1.1.15",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "8f6f1d71fab73db2f30cf4bf14560f01d862e30ff7cd0f432a769348a91959b8",
-    "sizeBytes":  744191,
-    "publishedAt":  "2026-05-13T10:08:34Z",
+    "sha256":  "122930e8398f7b453178ee3b81ea516fac76bc07639ccb6dc0edc11f9c588443",
+    "sizeBytes":  744189,
+    "publishedAt":  "2026-05-13T10:15:49Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "统一日志刷新后自动滑到底部",
-                      "环境状态读取输出每个检查步骤",
-                      "一键初始化日志保留每个执行步骤"
+                      "统一日志自动滑到底部",
+                      "一键初始化步骤改为中文说明",
+                      "环境状态读取步骤改为中文说明"
                   ]
 }
