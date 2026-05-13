@@ -1,16 +1,14 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001015,
-    "versionName":  "1.1.15",
+    "versionCode":  1001016,
+    "versionName":  "1.1.16",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "122930e8398f7b453178ee3b81ea516fac76bc07639ccb6dc0edc11f9c588443",
-    "sizeBytes":  744189,
-    "publishedAt":  "2026-05-13T10:15:49Z",
+    "sha256":  "3ce19ba74bcc2d008993afb12f33f6683db3249062c592955c92e406bda87714",
+    "sizeBytes":  744191,
+    "publishedAt":  "2026-05-13T14:56:47Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "统一日志自动滑到底部",
-                      "一键初始化步骤改为中文说明",
-                      "环境状态读取步骤改为中文说明"
+                      "修复 Android 14 一键初始化证书导入：支持 /data/local/tmp/cert 下 PEM/CRT/CER/DER 自动转换为 hash.0，并在证书状态显示 APEX 挂载说明。"
                   ]
 }
