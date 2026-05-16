@@ -1,14 +1,14 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001018,
-    "versionName":  "1.1.18",
+    "versionCode":  1001019,
+    "versionName":  "1.1.19",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "db452e2937f8ae14cfe947ed6a5c2e97605d6fbec2aca74243831ca141ebc81a",
-    "sizeBytes":  748284,
-    "publishedAt":  "2026-05-16T14:47:45Z",
+    "sha256":  "8908d81d99f39bcf55319984ce42a6f8d39e56071b18577dff98ddfe5a47074a",
+    "sizeBytes":  748285,
+    "publishedAt":  "2026-05-16T15:01:02Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "登录安全加固：认证成功、刷新、校验和游客开关返回均需要服务器签名校验，防止抓包篡改返回绕过登录。"
+                      "登录/注册/找回密码/刷新登录等认证请求已加密，降低普通抓包泄露密码和 token 的风险。服务端继续校验响应签名和 nonce，旧版明文认证请求将要求更新。"
                   ]
 }
