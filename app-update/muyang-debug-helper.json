@@ -1,14 +1,14 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001017,
-    "versionName":  "1.1.17",
+    "versionCode":  1001018,
+    "versionName":  "1.1.18",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "be1b0ced060d75b9c0e56e3f4f171907fadcd7a9bc0c5b1610200a9129de8573",
-    "sizeBytes":  744191,
-    "publishedAt":  "2026-05-13T15:22:46Z",
+    "sha256":  "db452e2937f8ae14cfe947ed6a5c2e97605d6fbec2aca74243831ca141ebc81a",
+    "sizeBytes":  748284,
+    "publishedAt":  "2026-05-16T14:47:45Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "修复用户证书目录漏处理 .1/.2 等 hash 后缀的问题：现在读取、复制、统计、状态检测都支持 Android 证书文件 hash.数字，避免 c8750f0d.1 这类证书没有进入系统可见目录。"
+                      "登录安全加固：认证成功、刷新、校验和游客开关返回均需要服务器签名校验，防止抓包篡改返回绕过登录。"
                   ]
 }
