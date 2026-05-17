@@ -1,14 +1,14 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1001020,
-    "versionName":  "1.1.20",
+    "versionCode":  1000000,
+    "versionName":  "1.0.0",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "0a681b6af9bdb9d4327eb4a41a2fb926691a130d7cc26a284036ffd98b969520",
-    "sizeBytes":  748285,
-    "publishedAt":  "2026-05-16T15:35:28Z",
+    "sha256":  "be07cd8b8b335d778486f146b9778326ee048d6733ff8df5e8ee9423c7020fd8",
+    "sizeBytes":  748287,
+    "publishedAt":  "2026-05-17T01:33:06Z",
     "forceUpdate":  true,
     "changelog":  [
-                      "认证请求加入加密正文 nonce 校验和服务端一次性 nonce 防重放，进一步降低抓包重放登录/刷新请求的风险。"
+                      "修复若干bug"
                   ]
 }
