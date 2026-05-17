@@ -1,12 +1,12 @@
 {
     "appId":  "com.muyang.debughelper",
-    "versionCode":  1000000,
+    "versionCode":  1001021,
     "versionName":  "1.0.0",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_debug_helper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "be07cd8b8b335d778486f146b9778326ee048d6733ff8df5e8ee9423c7020fd8",
+    "sha256":  "ce6076d196e0ce4e614878ef2711e3a8ad4f2ea976b69683580a9393168512f4",
     "sizeBytes":  748287,
-    "publishedAt":  "2026-05-17T01:33:06Z",
+    "publishedAt":  "2026-05-17T01:35:34Z",
     "forceUpdate":  true,
     "changelog":  [
                       "修复若干bug"
