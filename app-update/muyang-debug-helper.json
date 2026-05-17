@@ -1,12 +1,12 @@
 {
     "appId":  "com.muyang.reversehelper",
-    "versionCode":  1001027,
+    "versionCode":  1001028,
     "versionName":  "1.0.0",
     "downloadUrl":  "https://github.com/muyang520/muyangcoursedescription/releases/download/debug-helper-latest/muyang_reversehelper.apk",
     "releasePage":  "https://github.com/muyang520/muyangcoursedescription/releases/tag/debug-helper-latest",
-    "sha256":  "bd78a2ad5ec6eaec7bbf22e37690b40e4d84edc100380286a36cdd5d6a054231",
-    "sizeBytes":  748285,
-    "publishedAt":  "2026-05-17T04:06:54Z",
+    "sha256":  "705b569a64de04eda291cde5869127b54190eb6ee4c5ed300e9f4e8e961de0e6",
+    "sizeBytes":  752380,
+    "publishedAt":  "2026-05-17T04:14:21Z",
     "forceUpdate":  true,
     "changelog":  [
                       "修复若干bug"
