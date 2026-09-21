@@ -89,79 +89,43 @@
 publish_apk_repo.bat
 ```
 
-最近更新（2026年3月）：
+最近更新（2026年9月）：
 
 安卓新增：
 
-- 14.3 逆向还原GrokAPP的算法并调用接口对话
-  - 1.secp256k1密钥对生成与公钥压缩
+- 14.8 内核隐藏Frida上maps隐藏
+- 14.9 内核隐藏Frida下
 
-  - 2.gRPC/Protobuf协议逆向与手写编码
+安卓（2026年8月）：
 
-  - 3.challenge-response匿名认证流程分析
+- 14.4 frida常见检测(第一节-原理与进程痕迹)
+- 14.5 frida常见检测(第二节-反Hook与ART)
+- 14.6 Ai魔改安卓的frida
+- 14.7 Ai魔改iOS的frida
 
-  - 4.ECDSA签名：compact格式+Low-S规范化
+iOS（2026年8月）：
 
-  - 5.Python完整还原与流式gRPC响应解析
+- 12.6(Ai)iOS常见越狱检测
+- 12.7(Ai)iOS常见的frida检测
+- 12.8(Ai)Ai魔改安卓的frida
+- 12.9(Ai)Ai魔改iOS的frida
 
-  - 6.MCP辅助逆向：jadxmcp+idapromcp实战
+安卓基础第一章重置为新版本（2026年5月）：
 
-    
+- 1.1 安卓逆向环境准备与设备连接
+- 1.2 APK文件结构与smali基础
+- 1.3 实操_CrackMe注册码破解
+- 1.4 JEB动态调试入门
+- 1.5 初始混淆入门
+- 1.6 安卓抓包环境搭建
+- 1.7 第一章总结以及学习建议
 
-iOS新增:
+iOS（2026年5月）：
 
-- 8.ins_419.0.0最新版抓包
-  - 1.Frida hook资源加载定位CACerts.plist 
-  - 2.IDA交叉引用找到核心验证函数 
-  - 3.Hook该函数返回0绕过SSL Pinning
+- 1.0(快速入门)iOS逆向学前须知
 
-  
-  
-- 12.1(Ai).AI工具入门_iOS版
-  - 1.LLM基础概念 
-  - 2.Cline+DeepSeek环境配置 
-  - 3.逆向场景Prompt设计
-  
-  
-  
-- 12.2(Ai)Etxx_Swift签名算法逆向_x-etsy-signature
+更早的更新（2026年3月及以前）见 [CHANGELOG.md](CHANGELOG.md)。
 
-  - 通过 hook NSMutableURLRequest 定位签名 header 的设置位置
-  - 使用 strings + grep 跨模块搜索关键字符串
-  - AI + IDA（idapromcp）远程反编译与代码分析工作流
-  - HMAC-SHA256 签名算法的识别与参数还原
-  - Swift async/await 编译产物在 IDA 中的识别技巧
-
-  
-
-- 12.3(Ai)Etxx_设备指纹与链路追踪逆向
-
-  - 通过 hook NSUserDefaults 系统方法定位本地缓存数据的写入来源
-  - 使用 frida-trace 全量 trace 快速发现目标方法
-  - 跨模块搜索（frameworks + 主二进制）定位字符串归属
-  - UUID 生成设备指纹的常见套路（去横线、截取、转小写）
-  - Sentry 分布式追踪协议（sentry-trace header）的格式与生成逻辑
-
-  
-
-- 12.4(Ai)Grok_iOS_从私钥到x-anonuserid_匿名身份逆向教案
-
-  - 抓包定位需要重点逆向的请求头，区分硬编码字段、随机字段和持久化字段。
-  - 通过 Frida Hook Keychain 读写，观察匿名凭证的保存、读取和重建时机。
-  - 拆解 `CreateAnonUser` 请求与响应中的 gRPC 帧和 protobuf 结构，理解数据是怎样一层层打包的。
-  - 从私钥生成、压缩公钥推导到 `x-anonuserid`，建立“本地身份生成”这一条主线。
-  - 结合 IDA 静态分析、日志字符串和交叉引用，定位匿名身份初始化的关键函数链。
-  - 用 Python 复现请求和响应解析，把抓包结论转成可验证、可运行的代码。
-
-  
-
-- 12.5(Ai)Grok_iOS_从x-challenge到x-signature_签名链路逆向
-  - 拆解 `CreateAnonUserChallenge` 的 gRPC 请求与响应，确认 `x-challenge` 来自服务端而非客户端生成。
-  - 通过 IDA 字符串搜索、交叉引用和日志定位，追踪出 `x-signature` 的生成流程：SHA256 + secp256k1 签名。
-  - 手动拆解 protobuf tag 编码（单字节 tag vs 多字节 varint tag），从 hex 还原出 field number 和 wire type。
-  - 识别 gRPC 流式响应是多个 length-prefixed frame 拼接，逐帧还原出 assistant 文本和元信息。
-  - 串联 CreateAnonUser → CreateAnonUserChallenge → 签名 → CreateConversation → AddResponse 五步调用链，建立完整认证流程。
-  - 用 Python 动态复现整条链路，从 `os.urandom(32)` 到收到 Grok 回复，零硬编码凭证。
 ---
 
 ## 学完能干什么？
