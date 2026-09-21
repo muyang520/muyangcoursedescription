@@ -14,3 +14,11 @@ README_OLD.md
 *.zip
 apk-repo/downloads/
 apk-repo/inbox/*.apk
+
+# 本地生成的宣传物料与构建脚本（含价格，不公开）
+build.js
+build_promo.js
+build_parse.js
+build_style.js
+课程介绍.html
+沐阳逆向课程介绍.pdf
