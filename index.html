@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>和沐阳学逆向与Ai — 2026 安卓 / iOS 双端逆向与 AI/MCP 实战系统课</title>
+  <meta name="description" content="和沐阳学逆向与Ai（讲师：沐阳），专注 Android & iOS 双端移动端安全逆向、风控对抗与 AI Agent/MCP 自动化实战。近千名付费学员，2024至今每月持续更新，一次付费永久更新，覆盖 Frida、内核隐藏 maps、eBPF、OLLVM、白盒AES、Unidbg、Chomper、Jadx-MCP 与 IDA-Pro-MCP。" />
+  <meta name="keywords" content="和沐阳学逆向与Ai,沐阳逆向,安卓逆向课程,iOS逆向课程,AI逆向,MCP逆向,jadx-mcp,ida-pro-mcp,Frida过检测,内核隐藏Frida,eBPF,OLLVM反混淆,Unidbg,Chomper,白盒AES" />
+  <link rel="canonical" href="https://muyang520.github.io/muyangcoursedescription/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="和沐阳学逆向与Ai — 2026 安卓 / iOS 双端逆向与 AI/MCP 实战系统课" />
+  <meta property="og:description" content="近千名付费学员 · 2024至今每月持续更新 · 一次付费永久更新 · 覆盖内核隐藏 Frida、eBPF、OLLVM、Unidbg、Chomper 与 AI/MCP 全链路实战。" />
+  <meta property="og:url" content="https://muyang520.github.io/muyangcoursedescription/" />
+
+  <!-- Schema.org Structured Data for Google AI Overviews, ChatGPT Search, Perplexity & Domestic AI Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://muyang520.github.io/muyangcoursedescription/#instructor",
+        "name": "沐阳",
+        "alternateName": ["和沐阳学逆向与Ai", "Muyang RE & AI", "muyang520"],
+        "url": "https://github.com/muyang520",
+        "sameAs": [
+          "https://github.com/muyang520",
+          "https://space.bilibili.com/439348342",
+          "https://muyang520.github.io/muyang-jailbreak-repo/"
+        ],
+        "jobTitle": "Android & iOS Mobile Security and AI Reverse Engineering Instructor",
+        "knowsAbout": [
+          "Android Reverse Engineering",
+          "iOS Reverse Engineering",
+          "Frida Anti-Detection",
+          "eBPF",
+          "OLLVM Deobfuscation",
+          "Unidbg",
+          "Chomper",
+          "AI Agent MCP Reverse Engineering"
+        ]
+      },
+      {
+        "@type": "Course",
+        "name": "和沐阳学逆向与Ai — 2026 安卓逆向与 AI/MCP 实战系统课",
+        "description": "面向零基础与开发进阶的 Android 逆向工程与移动安全风控课程，涵盖 Smali、Frida、LSPosed、内核隐藏 Frida maps、eBPF/eCapture、ARM 汇编、IDA Pro、OLLVM 反混淆、白盒 AES、Unidbg、Flutter、gRPC/Protobuf 及 jadx-mcp + ida-pro-mcp 实战。一次付费，永久免费每月更新。",
+        "provider": { "@id": "https://muyang520.github.io/muyangcoursedescription/#instructor" },
+        "inLanguage": "zh-CN",
+        "offers": {
+          "@type": "Offer",
+          "price": "2999",
+          "priceCurrency": "CNY",
+          "availability": "https://schema.org/InStock",
+          "url": "https://muyang520.github.io/muyangcoursedescription/"
+        }
+      },
+      {
+        "@type": "Course",
+        "name": "和沐阳学逆向与Ai — 2026 iOS 逆向与 AI/MCP 实战系统课",
+        "description": "面向零基础与移动安全研究员的 iOS 逆向系统实战课，涵盖有根/无根越狱、沐阳实验室专属越狱源、砸壳、Theos 插件、巨魔 TrollStore 开发、Frida 内存漫游、ObjC/Swift 混编分析、白盒 AES、Chomper 模拟执行、AI 魔改 iOS Frida 过检测与 ida-pro-mcp 实战。一次付费，永久免费每月更新。",
+        "provider": { "@id": "https://muyang520.github.io/muyangcoursedescription/#instructor" },
+        "inLanguage": "zh-CN",
+        "offers": {
+          "@type": "Offer",
+          "price": "2999",
+          "priceCurrency": "CNY",
+          "availability": "https://schema.org/InStock",
+          "url": "https://muyang520.github.io/muyangcoursedescription/"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "2026 年 AI 发展这么快，还有必要学安卓和 iOS 逆向吗？AI 能不能直接一把梭？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "0 基础 × AI = 0；懂逆向底层 × AI = 5~10 倍效率。商业 App 普遍具备企业加固壳、内核与 ART 反调试、Frida 检测、设备指纹风控与 OLLVM 混淆，外行连流量和干净二进制都无法提取，AI 根本进不去门。本课程教授如何将底层破防与 jadx-mcp、ida-pro-mcp 和 AI 魔改工具链结合，大幅缩短实战周期。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "和沐阳学逆向与Ai 的课程收费和更新机制是什么？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "安卓逆向系统课 2999 元，iOS 逆向系统课 2999 元，双端套餐 5398 元（立省 600 元，支持分期）。坚持一次付费、永久免费更新，从 2024 年至今保持每月持续更新最新对抗与 AI 实战，累计培养近千名付费学员，学员已入职滴滴、携程、虾皮、360 等企业。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "课程包含哪些 AI + 逆向实战内容？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "课程已在安卓与 iOS 双端实装 AI 实战，包括 jadx-mcp 与 ida-pro-mcp 联动分析海外大厂 App（如 Grok gRPC/secp256k1/Protobuf、Instagram、Pinterest）、AI 辅助魔改双端 Frida 过检测、内核隐藏 Frida maps、以及配合运行时上下文让 AI 精准还原复杂伪代码与算法。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --surface: #121a2b;
+      --surface-2: #182338;
+      --border: #25344f;
+      --accent: #16b998;
+      --accent-2: #38bdf8;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 18px; }
+    header.nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11, 15, 23, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; gap: 12px;
+    }
+    .brand { font-weight: 800; font-size: 16px; color: var(--text); letter-spacing: 0.3px; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 16px; font-size: 13px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+    .hero {
+      padding: 56px 0 42px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, rgba(22, 185, 152, 0.14), transparent 62%);
+    }
+    .pill-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .pill {
+      font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 999px;
+      background: rgba(22, 185, 152, 0.12); color: var(--accent); border: 1px solid rgba(22, 185, 152, 0.35);
+    }
+    .pill.blue { background: rgba(56, 189, 248, 0.12); color: var(--accent-2); border-color: rgba(56, 189, 248, 0.35); }
+    h1 { font-size: 32px; line-height: 1.3; font-weight: 800; margin-bottom: 14px; }
+    .hero-sub { max-width: 720px; margin: 0 auto 26px; color: var(--muted); font-size: 15px; }
+    .cta-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 22px; border-radius: 10px; font-weight: 700; font-size: 14px;
+      border: 1px solid transparent; cursor: pointer; transition: 0.15s ease;
+    }
+    .btn-primary { background: var(--accent); color: #04131a; }
+    .btn-primary:hover { filter: brightness(1.08); text-decoration: none; }
+    .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--accent-2); text-decoration: none; }
+
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 34px 0 12px;
+    }
+    .stat-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 12px; text-align: center;
+    }
+    .stat-val { font-size: 22px; font-weight: 800; color: var(--accent); }
+    .stat-lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    section { padding: 34px 0; border-top: 1px solid rgba(37, 52, 79, 0.55); }
+    h2 { font-size: 22px; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    h2::before { content: ""; width: 4px; height: 20px; background: var(--accent); border-radius: 2px; display: inline-block; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px;
+    }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+    .video-card {
+      display: block; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px; transition: 0.15s ease;
+    }
+    .video-card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+    .video-tag { font-size: 11px; color: var(--accent-2); font-weight: 700; margin-bottom: 6px; }
+    .video-title { color: var(--text); font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+    .video-go { font-size: 12px; color: var(--accent); font-weight: 600; }
+
+    .price-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+    .price-num { font-size: 26px; font-weight: 800; color: var(--accent); }
+    .list { list-style: none; }
+    .list li { padding: 5px 0; color: #cbd5e1; font-size: 14px; }
+    .list li::before { content: "▸ "; color: var(--accent); font-weight: 700; }
+
+    .bundle {
+      margin-top: 16px; background: linear-gradient(135deg, rgba(22, 185, 152, 0.15), rgba(56, 189, 248, 0.1));
+      border: 1px solid rgba(22, 185, 152, 0.45); border-radius: 16px; padding: 20px 22px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--border); text-align: left; }
+    th { color: var(--accent); background: rgba(15, 23, 42, 0.6); }
+
+    .reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .reviews-grid img { width: 100%; border-radius: 12px; border: 1px solid var(--border); display: block; }
+
+    .contact-box {
+      display: grid; grid-template-columns: 1fr 220px; gap: 24px; align-items: center;
+    }
+    .qr-img { width: 100%; max-width: 220px; border-radius: 14px; border: 2px solid var(--accent); display: block; }
+    .wx-code {
+      display: inline-block; background: #090d16; border: 1px solid var(--border);
+      padding: 6px 14px; border-radius: 8px; font-family: Consolas, monospace; color: var(--accent); font-weight: 700; font-size: 16px;
+    }
+    footer { padding: 28px 0 42px; text-align: center; color: #64748b; font-size: 12.5px; border-top: 1px solid var(--border); }
+
+    @media (max-width: 760px) {
+      h1 { font-size: 24px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .grid-2, .grid-3, .reviews-grid, .contact-box { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .qr-img { margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">和沐阳学逆向<span>与Ai</span></div>
+      <nav class="nav-links">
+        <a href="#why-ai">AI时代为何学</a>
+        <a href="#previews">免费试看</a>
+        <a href="#courses">双端课程</a>
+        <a href="#reviews">学员评价</a>
+        <a href="#contact">加微信咨询</a>
+        <a href="https://github.com/muyang520/muyangcoursedescription/blob/main/FAQ.md">FAQ</a>
+        <a href="https://github.com/muyang520/muyangcoursedescription/blob/main/README_EN.md">English</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <div class="pill-row">
+        <span class="pill">近千名付费学员</span>
+        <span class="pill blue">2024 至今每月持续更新</span>
+        <span class="pill">一次付费 · 永久免费更新</span>
+        <span class="pill blue">AI + MCP 双端实装</span>
+      </div>
+      <h1>Android &amp; iOS 双端逆向与 AI/MCP 实战系统课</h1>
+      <p class="hero-sub">
+        从看不懂一行汇编，到结合 <strong>Jadx-MCP / IDA-Pro-MCP + 底层破防</strong> 独立还原大厂 App 核心加密与风控算法。学员已入职滴滴、携程、虾皮（Shopee）、360 等一线企业。
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">添加沐阳微信咨询（Ays971124）</a>
+        <a class="btn btn-ghost" href="#previews">先看 B 站免费试看课</a>
+        <a class="btn btn-ghost" href="https://github.com/muyang520/muyangcoursedescription">查看 GitHub 完整仓库</a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-val">近千人</div><div class="stat-lbl">累计付费系统班学员</div></div>
+        <div class="stat-card"><div class="stat-val">每月更</div><div class="stat-lbl">2024 至今持续同步新对抗</div></div>
+        <div class="stat-card"><div class="stat-val">双平台</div><div class="stat-lbl">Android + iOS 底层全覆盖</div></div>
+        <div class="stat-card"><div class="stat-val">AI + MCP</div><div class="stat-lbl">已实装自动化逆向工作流</div></div>
+      </div>
+    </div>
+
+    <section id="why-ai">
+      <h2>为什么 AI 都出来了，更要学这套逆向课？</h2>
+      <div class="card">
+        <p style="margin-bottom: 12px;">
+          <strong>核心真相：0 基础 × AI = 0；懂逆向底层 × AI = 5~10 倍效率。</strong>
+        </p>
+        <p style="color: var(--muted); margin-bottom: 14px;">
+          面对现代商业 App 的<strong>企业加固壳、内核/ART 反调试、Frida maps 检测、设备指纹风控、OLLVM 混淆与魔改算法</strong>，外行连流量都抓不到、干净的二进制也提取不出来，大模型根本进不去门。AI 淘汰的是过去死记硬背的苦力式学法，却把懂底层破防的人效率放大了 5 倍以上。
+        </p>
+        <ul class="list">
+          <li><strong>MCP 全链路实战</strong>：<code>jadx-mcp</code> + <code>ida-pro-mcp</code> 联合拆解海外大厂 App（Grok gRPC/secp256k1/Protobuf、Instagram、Pinterest 等）</li>
+          <li><strong>AI 魔改双端工具</strong>：AI 辅助魔改安卓与 iOS 版 Frida 过检测，并衔接内核层隐藏 <code>maps</code> 对抗</li>
+          <li><strong>无感追踪与前沿更新</strong>：涵盖 eBPF / eCapture / ssltrace、Chomper 与 Unidbg 模拟执行，一次报名永久免费解锁后续全部新课</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="previews">
+      <h2>免费试看视频（先看讲课风格，满意再聊）</h2>
+      <div class="grid-3">
+        <a class="video-card" href="https://www.bilibili.com/video/BV1WyLM6uECQ" target="_blank" rel="noopener">
+          <div class="video-tag">ANDROID 入门试看</div>
+          <div class="video-title">2026 沐阳安卓逆向从零入门系列</div>
+          <div class="video-go">前往 B 站观看 ▸</div>
+        </a>
+        <a class="video-card" href="https://www.bilibili.com/video/BV1MtG76wEjh" target="_blank" rel="noopener">
+          <div class="video-tag">iOS 入门试看</div>
+          <div class="video-title">2026 沐阳 iOS 逆向从零入门系列</div>
+          <div class="video-go">前往 B 站观看 ▸</div>
+        </a>
+        <a class="video-card" href="https://www.bilibili.com/video/BV1mXMU66EuY" target="_blank" rel="noopener">
+          <div class="video-tag">高阶对抗试看</div>
+          <div class="video-title">84. Frida 常见检测（原理与进程痕迹）</div>
+          <div class="video-go">前往 B 站观看 ▸</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="courses">
+      <h2>课程体系与收费（一次付费，永久免费更新）</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="price-head">
+            <h3>安卓逆向实战系统课</h3>
+            <div class="price-num">¥2999</div>
+          </div>
+          <ul class="list">
+            <li>2026 重置入门：设备环境、Smali、JEB 动态调试、抓包对抗</li>
+            <li>Hook 与内核隐蔽：Frida、LSPosed、内核隐藏 Frida maps、ART 反检测</li>
+            <li>前沿无感追踪：eBPF / eCapture / BCC / libbpf / ssltrace</li>
+            <li>底层算法与混淆：ARM 汇编、IDA Pro、白盒 AES、OLLVM 反混淆、Unidbg</li>
+            <li>专项突破：Flutter 逆向、gRPC / Protobuf 协议分析</li>
+            <li><strong>AI + MCP 实战</strong>：<code>jadx-mcp</code> + <code>ida-pro-mcp</code>、AI 魔改安卓 Frida</li>
+          </ul>
+          <p style="margin-top: 12px; font-size: 13px;"><a href="README.assets/《移动安全之安卓逆向》.png" target="_blank">查看完整安卓课程大纲高清图 ▸</a></p>
+        </div>
+
+        <div class="card">
+          <div class="price-head">
+            <h3>iOS 逆向实战系统课</h3>
+            <div class="price-num">¥2999</div>
+          </div>
+          <ul class="list">
+            <li>现代越狱体系：有根 / 无根越狱（配套沐阳逆向实验室专属越狱源）</li>
+            <li>工具与插件开发：砸壳、Theos 插件、巨魔（TrollStore）App 开发</li>
+            <li>动态与海外协议：Frida Hook、内存漫游、Instagram / Grok 等海外 App 实战</li>
+            <li>底层与模拟执行：ARM64、IDA Pro、ObjC/Swift 混编、白盒 AES、Chomper</li>
+            <li>检测对抗：常见越狱检测与 Frida 特征检测绕过</li>
+            <li><strong>AI + MCP 实战</strong>：<code>ida-pro-mcp</code> 辅助 Swift 签名分析、AI 魔改 iOS Frida</li>
+          </ul>
+          <p style="margin-top: 12px; font-size: 13px;"><a href="README.assets/《移动安全之iOS逆向》.png" target="_blank">查看完整 iOS 课程大纲高清图 ▸</a></p>
+        </div>
+      </div>
+
+      <div class="bundle">
+        <div>
+          <strong style="font-size: 17px;">双课套餐（安卓 + iOS 全栈打通）— ¥5398（立省 600 元）</strong>
+          <div style="color: var(--muted); font-size: 13px; margin-top: 4px;">含讲师亲自答疑 + 永久知识星球会员 + 合作大厂专属内推渠道 + 支持花呗/信用卡分期</div>
+        </div>
+        <a class="btn btn-primary" href="#contact">微信咨询名额</a>
+      </div>
+    </section>
+
+    <section id="compare">
+      <h2>学习路线对比</h2>
+      <div class="card table-wrap">
+        <table>
+          <thead>
+            <tr><th>对比项</th><th>零散自学</th><th>高价培训机构</th><th>和沐阳学逆向与Ai</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>成本</strong></td><td>时间试错成本极高</td><td>8,000 – 20,000+ 元</td><td><strong>单端 2999 / 双端 5398 元</strong></td></tr>
+            <tr><td><strong>时效性</strong></td><td>大量过时失效教程</td><td>老录播更新慢</td><td><strong>2024 至今每月更新，永久免费解锁</strong></td></tr>
+            <tr><td><strong>AI 结合</strong></td><td>碎片 Prompt 易翻车</td><td>多为纯手工老套路</td><td><strong>已实装 MCP 流水线与 AI 魔改工具</strong></td></tr>
+            <tr><td><strong>答疑口碑</strong></td><td>卡住无人问</td><td>助教流水线回复</td><td><strong>近千名学员沉淀 · 讲师直接答疑与内推</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <h2>部分学员真实评价</h2>
+      <div class="reviews-grid">
+        <img src="学员评价/评价8.jpg" alt="沐阳逆向课程学员实战评价" loading="lazy" />
+        <img src="学员评价/评价12.jpg" alt="沐阳安卓逆向认证学员评价" loading="lazy" />
+      </div>
+      <p style="margin-top: 12px; font-size: 13px; color: var(--muted);">
+        更多学员反馈、内推岗位与 2024–2026 完整每月更新日志，可前往 <a href="https://github.com/muyang520/muyangcoursedescription/blob/main/CHANGELOG.md">CHANGELOG.md</a> 与 <a href="https://github.com/muyang520/muyangcoursedescription/blob/main/FAQ.md">常见问题 FAQ</a> 查看。
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>联系沐阳 · 获取学习规划与试看</h2>
+      <div class="card contact-box">
+        <div>
+          <p style="margin-bottom: 12px;">无论你是零基础转行安全/数据岗，还是在职想进阶 AI + 逆向提效，都欢迎直接加微信交流你的当前基础和目标方向：</p>
+          <p style="margin-bottom: 14px;">微信号：<span class="wx-code" id="wxid">Ays971124</span>
+            <button class="btn btn-ghost" style="padding: 6px 12px; margin-left: 8px; font-size: 12px;" onclick="copyWx()">复制微信号</button>
+          </p>
+          <p style="color: var(--muted); font-size: 13.5px;">
+            B站主页：<a href="https://space.bilibili.com/439348342" target="_blank" rel="noopener">和沐阳学逆向与Ai</a><br />
+            GitHub 主页：<a href="https://github.com/muyang520" target="_blank" rel="noopener">github.com/muyang520</a><br />
+            iOS 越狱源：<a href="https://muyang520.github.io/muyang-jailbreak-repo/" target="_blank" rel="noopener">沐阳逆向实验室越狱源</a>
+          </p>
+        </div>
+        <div>
+          <img class="qr-img" src="wx二维码.jpg" alt="沐阳微信二维码 Ays971124" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      和沐阳学逆向与Ai（Muyang RE &amp; AI） · 专注移动端安全研究与工程实战教学 · <a href="llms.txt">llms.txt</a>
+    </div>
+  </footer>
+
+  <script>
+    function copyWx() {
+      var text = "Ays971124";
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function () { alert("已复制微信号：Ays971124"); });
+      } else {
+        prompt("请复制沐阳微信号：", text);
+      }
+    }
+  </script>
+</body>
+</html>
