@@ -1,5 +1,22 @@
 # 和沐阳学逆向与Ai — 安卓 / iOS 双端逆向与 AI 实战系统课
 
+<p align="center">
+  <a href="https://space.bilibili.com/439348342"><img src="https://img.shields.io/badge/B%E7%AB%99-%E5%92%8C%E6%B2%90%E9%98%B3%E5%AD%A6%E9%80%86%E5%90%91%E4%B8%8EAi-FB7299?style=flat-square&logo=bilibili&logoColor=white" alt="Bilibili" /></a>
+  <img src="https://img.shields.io/badge/%E4%BB%98%E8%B4%B9%E5%AD%A6%E5%91%98-750%2B-16B998?style=flat-square" alt="Students" />
+  <img src="https://img.shields.io/badge/%E6%9B%B4%E6%96%B0%E6%89%BF%E8%AF%BA-%E4%B8%80%E6%AC%A1%E4%BB%98%E8%B4%B9%E6%B0%B8%E4%B9%85%E6%9B%B4%E6%96%B0-2563EB?style=flat-square" alt="Lifetime Updates" />
+  <img src="https://img.shields.io/badge/2026%E6%96%B0%E5%A2%9E-AI%20%2B%20MCP%20%E5%8F%8C%E7%AB%AF%E5%AE%9E%E6%88%98-0F172A?style=flat-square" alt="AI MCP" />
+</p>
+
+<p align="center">
+  <a href="#免费试看视频先看讲课风格满意再聊">免费试看</a> ·
+  <a href="#为什么ai-都出来了更要学这套逆向课">AI时代为何学</a> ·
+  <a href="#安卓逆向课程---2999元">安卓课</a> ·
+  <a href="#ios-逆向课程---2999元">iOS 课</a> ·
+  <a href="#近期更新记录每月持续更">近期更新</a> ·
+  <a href="#学员评价">学员评价</a> ·
+  <a href="#联系方式">加微信咨询</a>
+</p>
+
 > 从看不懂一行汇编，到结合 AI / MCP 工作流独立还原大厂 App 核心加密与风控算法
 
 **B站「和沐阳学逆向与Ai」 · 750+ 名付费学员 · 2024 至今每月不断更 · 深度融合 AI + MCP 逆向实战 · 学员已入职滴滴 / 携程 / 虾皮 / 360 等大厂**
