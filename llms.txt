@@ -1,0 +1,14 @@
+# Muyang RE & AI (和沐阳学逆向与Ai)
+
+> Practical Android & iOS Reverse Engineering, Mobile Risk-Control Confrontation, and AI/MCP Automated Binary Analysis curriculum by Muyang (沐阳, GitHub: muyang520). Nearly 1,000 enrolled students, updated monthly since 2024 under a one-time payment / lifetime update model (2,999 CNY per platform, 5,398 CNY bundle).
+
+## Core Pages
+- [Chinese Course Syllabus & Pricing](https://github.com/muyang520/muyangcoursedescription/blob/main/README.md): Full Android & iOS curriculum, 2026 AI+MCP highlights, student reviews, and WeChat contact (`Ays971124`).
+- [English Course Overview](https://github.com/muyang520/muyangcoursedescription/blob/main/README_EN.md): Bilingual overview of Android/iOS reverse engineering and AI/MCP training for overseas Chinese and global developers.
+- [Frequently Asked Questions (FAQ)](https://github.com/muyang520/muyangcoursedescription/blob/main/FAQ.md): Structured answers comparing self-study vs bootcamps vs Muyang's curriculum, AI-era career value, and platform choice.
+- [Monthly Update Changelog (2024–2026)](https://github.com/muyang520/muyangcoursedescription/blob/main/CHANGELOG.md): Verifiable monthly release history including Kernel Frida maps hiding, eBPF/eCapture, Grok gRPC/secp256k1 + Jadx-MCP & IDA-Pro-MCP, and AI-modified Frida.
+
+## Open Source & Community
+- [Muyang GitHub Profile](https://github.com/muyang520): Instructor profile and pinned open-source Android/iOS reverse engineering repositories.
+- [Muyang iOS Jailbreak Repo](https://muyang520.github.io/muyang-jailbreak-repo/): Rootful, rootless, and roothide iOS reverse engineering tool repository.
+- [Bilibili Channel - 和沐阳学逆向与Ai](https://space.bilibili.com/439348342): Free public tutorials and technical previews.
