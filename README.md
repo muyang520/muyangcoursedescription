@@ -46,6 +46,14 @@
 
 ---
 
+## 免费试看视频（先看讲课风格，满意再聊）
+
+- **安卓入门试看**：[2026沐阳安卓逆向从零入门系列](https://www.bilibili.com/video/BV1WyLM6uECQ)
+- **iOS 入门试看**：[2026沐阳iOS逆向从零入门系列](https://www.bilibili.com/video/BV1MtG76wEjh)
+- **高阶对抗试看**：[84.frida常见检测(第一节-原理与进程痕迹)](https://www.bilibili.com/video/BV1mXMU66EuY)
+
+---
+
 ## 课程介绍
 
 ### 安卓逆向课程 - 2999元
@@ -58,6 +66,9 @@
 - SO 层与算法还原：ARM 汇编、IDA Pro、魔改加密算法、OLLVM 反混淆、白盒 AES、Unidbg 模拟执行
 - 专项突破：Flutter 逆向、gRPC / Protobuf 协议分析
 - **AI + MCP 实战**：`jadx-mcp` + `ida-pro-mcp` 全链路联动、AI 一键辅助还原海外 App 签名、AI 魔改 Frida 过检测
+
+**核心章节速览（文字版，便于检索）**：
+`01` 环境搭建与 Smali/JEB/抓包入门 → `02` Frida/LSPosed Hook 与 RPC 实战 → `03` 常规与魔改加密算法（MD5/SHA/AES/RC4/白盒AES） → `04` ARM 汇编与 IDA Pro SO 层分析 → `05` OLLVM 反混淆与 Unidbg 模拟执行 trace → `06` Flutter 与 gRPC/Protobuf 协议还原 → `07` eBPF / eCapture / ssltrace 无感抓包 → `08` Frida 反检测、内核隐藏 maps 与 AI/MCP（`jadx-mcp` + `ida-pro-mcp`）实战。
 
 <details>
 <summary>点击查看完整安卓课程大纲</summary>
@@ -78,6 +89,9 @@
 - 静态与底层还原：ARM 汇编、IDA Pro、Swift / ObjC 混编逆向、白盒 AES、Chomper 模拟执行
 - 工具开发：巨魔（TrollStore）App 开发、逆向助手开发
 - **AI + MCP 实战**：AI + `ida-pro-mcp` 辅助分析 Swift/ObjC 伪代码、AI 还原签名与设备指纹链路、AI 魔改 iOS Frida 过检测
+
+**核心章节速览（文字版，便于检索）**：
+`01` iOS 学前须知与有根/无根越狱环境（含沐阳实验室越狱源） → `02` 砸壳、Theos 插件与巨魔（TrollStore）App 开发 → `03` Frida Hook、内存漫游与海外 App（Instagram/Grok 等）抓包协议 → `04` ARM 汇编、IDA Pro、ObjC/Swift 混编与白盒 AES → `05` Chomper 模拟执行与算法还原 → `06` 越狱/Frida 检测对抗、AI 魔改 iOS Frida 与 `ida-pro-mcp` 实战。
 
 <details>
 <summary>点击查看完整 iOS 课程大纲</summary>
@@ -139,19 +153,22 @@
 
 ## 学员评价
 
-> 以下为部分学员真实反馈，点击展开查看。
+> 以下为部分学员真实反馈，更多评价可点击下方展开查看。
+
+<p align="left">
+  <img src="学员评价/评价8.jpg" width="46%" alt="学员评价8" />
+  <img src="学员评价/评价12.jpg" width="46%" alt="学员评价12" />
+</p>
 
 <details>
-<summary>点击查看学员评价截图</summary>
+<summary>点击查看更多学员评价截图（共 7 张）</summary>
 
 ![评价1](学员评价/评价1.jpg)
 ![评价2](学员评价/评价2.jpg)
 ![评价7](学员评价/评价7.jpg)
-![评价8](学员评价/评价8.jpg)
 ![评价9](学员评价/评价9.jpg)
 ![评价10](学员评价/评价10.jpg)
 ![评价11](学员评价/评价11.jpg)
-![评价12](学员评价/评价12.jpg)
 ![评价13](学员评价/评价13.jpg)
 
 </details>
