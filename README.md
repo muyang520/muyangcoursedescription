@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://space.bilibili.com/439348342"><img src="https://img.shields.io/badge/B%E7%AB%99-%E5%92%8C%E6%B2%90%E9%98%B3%E5%AD%A6%E9%80%86%E5%90%91%E4%B8%8EAi-FB7299?style=flat-square&logo=bilibili&logoColor=white" alt="Bilibili" /></a>
-  <img src="https://img.shields.io/badge/%E4%BB%98%E8%B4%B9%E5%AD%A6%E5%91%98-750%2B-16B998?style=flat-square" alt="Students" />
+  <img src="https://img.shields.io/badge/%E4%BB%98%E8%B4%B9%E5%AD%A6%E5%91%98-%E8%BF%91%E5%8D%83%E4%BA%BA-16B998?style=flat-square" alt="Students" />
   <img src="https://img.shields.io/badge/%E6%9B%B4%E6%96%B0%E6%89%BF%E8%AF%BA-%E4%B8%80%E6%AC%A1%E4%BB%98%E8%B4%B9%E6%B0%B8%E4%B9%85%E6%9B%B4%E6%96%B0-2563EB?style=flat-square" alt="Lifetime Updates" />
   <img src="https://img.shields.io/badge/2026%E6%96%B0%E5%A2%9E-AI%20%2B%20MCP%20%E5%8F%8C%E7%AB%AF%E5%AE%9E%E6%88%98-0F172A?style=flat-square" alt="AI MCP" />
 </p>
@@ -14,12 +14,14 @@
   <a href="#ios-逆向课程---2999元">iOS 课</a> ·
   <a href="#近期更新记录每月持续更">近期更新</a> ·
   <a href="#学员评价">学员评价</a> ·
-  <a href="#联系方式">加微信咨询</a>
+  <a href="#联系方式">加微信咨询</a> ·
+  <a href="FAQ.md">常见问题 FAQ</a> ·
+  <a href="README_EN.md">English</a>
 </p>
 
 > 从看不懂一行汇编，到结合 AI / MCP 工作流独立还原大厂 App 核心加密与风控算法
 
-**B站「和沐阳学逆向与Ai」 · 750+ 名付费学员 · 2024 至今每月不断更 · 深度融合 AI + MCP 逆向实战 · 学员已入职滴滴 / 携程 / 虾皮 / 360 等大厂**
+**B站「和沐阳学逆向与Ai」 · 近千名付费学员 · 2024 至今每月不断更 · 深度融合 AI + MCP 逆向实战 · 学员已入职滴滴 / 携程 / 虾皮 / 360 等大厂**
 
 ---
 
@@ -27,7 +29,7 @@
 
 沐阳（B站：**[和沐阳学逆向与Ai](https://space.bilibili.com/439348342)**），专注移动安全逆向领域多年，深耕 Android 与 iOS 双平台逆向与风控对抗技术。
 
-- 累计培养 **750+ 名付费学员**，覆盖 Frida / IDA Pro / OLLVM / Unidbg / Chomper / eBPF / Flutter / Swift / AI MCP 等一线实战技术栈
+- 累计培养 **近千名付费学员**，覆盖 Frida / IDA Pro / OLLVM / Unidbg / Chomper / eBPF / Flutter / Swift / AI MCP 等一线实战技术栈
 - 学员已成功入职滴滴、携程、虾皮（Shopee）、360 及多家头部安全与数据企业
 
 > 不卖焦虑，只教当下依然能打穿真实商业 App 的硬核技术。
@@ -57,7 +59,7 @@
 
 逆向是一门技术迭代极快的手艺——App 版本一更，检测就变，两年前的老录播根本打不开今天的样本。
 
-这套课从 2024 年开课至今**保持每月持续更新**（完整更新日志见 [CHANGELOG.md](CHANGELOG.md)）。你付一次费，学到的永远是 2026 年当下还能用的最新对抗与 AI 工作流，750+ 位老学员的口碑就是最好证明。
+这套课从 2024 年开课至今**保持每月持续更新**（完整更新日志见 [CHANGELOG.md](CHANGELOG.md)）。你付一次费，学到的永远是 2026 年当下还能用的最新对抗与 AI 工作流，近千名老学员的口碑就是最好证明。
 
 **想了解课程试看或学习规划？加微信聊：Ays971124**
 
@@ -161,7 +163,7 @@
 |------|------|
 | 一次付费永久更新 | 2024 至今每月稳定加更，AI 与新风控玩法全部免费解锁 |
 | 体系化实战驱动 | 从 0 基础到内核/eBPF/白盒/MCP，全是真实商业 App 案例 |
-| 750+ 学员口碑沉淀 | 答疑群随时响应不卡壳，老学员持续推荐 |
+| 近千名学员口碑沉淀 | 答疑群随时响应不卡壳，老学员持续推荐 |
 | 专属就业内推 | 合作涵盖头部安全公司与一线互联网大厂，详见 [内推专区](内推专区/文字描述区.md) |
 | 配套资源齐全 | 赠送知识星球永久会员 + 沐阳逆向实验室 iOS 越狱源 |
 | 支持分期付款 | 花呗、信用卡分期均支持 |
